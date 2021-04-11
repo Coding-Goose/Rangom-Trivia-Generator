@@ -1,0 +1,36 @@
+.question-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1.67em;
+  border-radius: 2px;
+}
+
+button {
+  margin-right: 1rem;
+}
+
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+.wrong {
+  animation: blink-wrong 1s linear infinite;
+}
+
+.true {
+  animation: blink-true 1s linear infinite;
+}
+
+@keyframes blink-wrong{
+  0%{background-color: #fc6969;}
+  50%{background-color: white;}
+  100%{background-color: #fc6969;}
+}
+
+@keyframes blink-true{
+  0%{background-color: #6cdd5e;}
+  50%{background-color: white;}
+  100%{background-color: #6cdd5e;}
+}
+

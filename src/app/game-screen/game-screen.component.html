@@ -1,0 +1,24 @@
+<p-panel header="RANDOM TRIVIA GENERATOR">
+
+
+  <ng-template pTemplate="icons">
+    <button pButton class="p-panel-header-icon p-link" (click)="onBack()">
+      <span class="pi pi-arrow-left"></span>
+    </button>
+  </ng-template>
+
+  <div class="container" *ngIf="questions && questions[pointer]">
+
+    <h3>Question {{pointer + 1}}/{{questions.length}}</h3>
+
+    <app-fragen-question (answer)="onAnswer($event)" [question]="questions[pointer]"></app-fragen-question>
+  </div>
+</p-panel>
+
+<p-dialog header="QUIZ FINISHED!" [closable]="false" [(visible)]="displayEndScreen" [style]="{width: '95vw'}" [baseZIndex]="10000">
+  <p>You got {{points}} out of {{questions?.length}} correct!</p>
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-arrow-left" (click)="goBack()" label="Go Back" styleClass="p-button-text"></p-button>
+  </ng-template>
+</p-dialog>
+

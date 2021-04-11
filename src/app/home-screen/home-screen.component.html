@@ -1,0 +1,14 @@
+<p-panel header="RANDOM TRIVIA GENERATOR">
+  <div class="container">
+    <h5>Number of Questions: {{numberOfQuestion}}</h5>
+    <p-slider [(ngModel)]="numberOfQuestion" [max]="50" [min]="1"></p-slider>
+
+    <h5>Difficulty</h5>
+    <p-dropdown [options]="difficulties" [(ngModel)]="difficulty"></p-dropdown>
+
+    <button pButton type="button" label="PLAY" style="margin-top: 1.67em" (click)="onPlay()"></button>
+    <span class="contribute">Trivia Questions by: https://opentdb.com/</span>
+  </div>
+</p-panel>
+
+

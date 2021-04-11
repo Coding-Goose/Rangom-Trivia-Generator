@@ -1,0 +1,20 @@
+  <h5 [innerHTML]="question.question">
+  </h5>
+
+  <div class="multiple" *ngIf="question.type == 'multiple'" >
+    <div [ngClass]="'question-container ' + getCssAnim(answer)" *ngFor="let answer of answers; let i = index" (click)="onAnswer(answer)">
+      <button pButton type="button" [label]="getLabel(i)"></button>
+      <h5 [innerHTML]="answer.answer"></h5>
+    </div>
+  </div>
+
+  <div class="boolean" *ngIf="question.type == 'boolean'">
+    <div [ngClass]="'question-container ' + getBoolCssAnim('True')" (click)="onBooleanAnswer('True')">
+      <button pButton type="button" label="TRUE"></button>
+    </div>
+    <div [ngClass]="'question-container ' + getBoolCssAnim('False')" (click)="onBooleanAnswer('False')">
+      <button pButton type="button" label="FALSE"></button>
+    </div>
+  </div>
+
+
